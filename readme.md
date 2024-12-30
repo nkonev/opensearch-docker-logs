@@ -37,3 +37,12 @@ curl -Ss -X GET "localhost:9200/logstash-2024.12.30/_search" -H 'Content-Type: a
 ```
 
 Dashboards http://localhost:5601
+
+Saved objects https://forum.opensearch.org/t/is-there-a-saved-objects-api-in-opensearch/20625
+
+```sh
+curl -Ss -X POST "http://localhost:5601/api/saved_objects/_export" -H "osd-xsrf: true" -H "Content-Type: application/json" -d'
+{
+  "type": ["index-pattern", "search", "visualization", "dashboard"]
+}' | jq
+```
