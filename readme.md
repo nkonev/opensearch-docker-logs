@@ -53,3 +53,8 @@ curl -X POST "http://localhost:5601/api/saved_objects/_import?overwrite=true" -H
 ```
 
 SO - Kibana Search within text for string https://stackoverflow.com/questions/42514737/kibana-search-within-text-for-string
+
+Observability -> Logs -> PPL
+```
+source=logstash-*
+```
