@@ -43,9 +43,7 @@ services:
       - opensearch
     volumes:
       - ./config/fluentbit:/fluent-bit/etc
-    ports:
-      - "24224:24224"
-      - "24224:24224/udp"
+      - /var/run/fluent-bit:/var/run/fluent-bit:z
     restart: unless-stopped
 
   app:
@@ -64,7 +62,7 @@ services:
       # https://docs.docker.com/engine/logging/drivers/fluentd/
       driver: "fluentd"
       options:
-        fluentd-address: localhost:24224
+        fluentd-address: unix:///var/run/fluent-bit/socket
         tag: petclinic
     restart: unless-stopped
 
