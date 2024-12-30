@@ -35,3 +35,5 @@ curl -Ss -X GET "localhost:9200/logstash-2024.12.30/_search" -H 'Content-Type: a
 }
 ' | jq
 ```
+
+Dashboards http://localhost:5601
