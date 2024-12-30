@@ -60,6 +60,7 @@ services:
     environment:
       logging.structured.format.console: 'logstash'
     logging:
+      # https://docs.docker.com/engine/logging/drivers/fluentd/
       driver: "fluentd"
       options:
         fluentd-address: localhost:24224
