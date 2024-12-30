@@ -2,12 +2,15 @@ version: "3"
 services:
 
   opensearch:
-    image: opensearchproject/opensearch:latest
+    image: opensearchproject/opensearch:2.18.0
     environment:
       - node.name=opensearch
       - discovery.type=single-node
       - bootstrap.memory_lock=true # along with the memlock settings below, disables swapping
       - "OPENSEARCH_JAVA_OPTS=-Xms512m -Xmx512m" # minimum and maximum Java heap size, recommend setting both to 50% of system RAM
+      # - OPENSEARCH_INITIAL_ADMIN_PASSWORD=yourStrongPassword123!
+      # https://opensearch.org/docs/latest/install-and-configure/install-opensearch/docker/
+      - DISABLE_SECURITY_PLUGIN=true
     ulimits:
       memlock:
         soft: -1
@@ -23,17 +26,20 @@ services:
     restart: unless-stopped
 
   dashboards:
-    image: opensearchproject/opensearch-dashboards:latest
+    image: opensearchproject/opensearch-dashboards:2.18.0
     depends_on:
       - opensearch
+    # web ui
+    # username: kibanaserver
+    # password: kibanaserver  
     ports:
       - 5601:5601
     environment:
-      OPENSEARCH_HOSTS: '["https://opensearch:9200"]'
+      OPENSEARCH_HOSTS: '["http://opensearch:9200"]'
     restart: unless-stopped
 
   fluentbit:
-    image: fluent/fluent-bit:1.8.0
+    image: fluent/fluent-bit:3.2.3
     depends_on:
       - opensearch
     volumes:
