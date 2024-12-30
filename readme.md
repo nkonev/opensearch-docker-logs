@@ -51,3 +51,5 @@ Importing https://github.com/opensearch-project/OpenSearch-Dashboards/issues/172
 ```sh
 curl -X POST "http://localhost:5601/api/saved_objects/_import?overwrite=true" -H "osd-xsrf: true" --form file=@saved.ndjson
 ```
+
+SO - Kibana Search within text for string https://stackoverflow.com/questions/42514737/kibana-search-within-text-for-string
