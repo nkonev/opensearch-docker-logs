@@ -44,5 +44,10 @@ Saved objects https://forum.opensearch.org/t/is-there-a-saved-objects-api-in-ope
 curl -Ss -X POST "http://localhost:5601/api/saved_objects/_export" -H "osd-xsrf: true" -H "Content-Type: application/json" -d'
 {
   "type": ["index-pattern", "search", "visualization", "dashboard"]
-}' | jq
+}' > saved.ndjson
+```
+
+Importing https://github.com/opensearch-project/OpenSearch-Dashboards/issues/1723#issuecomment-1154803199
+```sh
+curl -X POST "http://localhost:5601/api/saved_objects/_import?overwrite=true" -H "osd-xsrf: true" --form file=@saved.ndjson
 ```
