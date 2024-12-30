@@ -59,7 +59,6 @@ services:
     # https://docs.spring.io/spring-boot/reference/features/logging.html#features.logging.structured.customizing-json
     environment:
       logging.structured.format.console: 'logstash'
-      logging.structured.json.add.application: 'petclinic'
     logging:
       driver: "fluentd"
       options:
