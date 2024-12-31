@@ -50,7 +50,7 @@ services:
     # It's need to build it manually
     # https://github.com/spring-projects/spring-petclinic/tree/main?tab=readme-ov-file#building-a-container
     # image: docker.io/library/spring-petclinic:3.4.0-SNAPSHOT
-    image: nkonev/spring-petclinic:3.4.0-SNAPSHOT
+    image: docker.io/nkonev/spring-petclinic:3.4.0-SNAPSHOT
     depends_on:
       - fluentbit
     ports:
