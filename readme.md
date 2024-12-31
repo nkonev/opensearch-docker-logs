@@ -1,6 +1,6 @@
 # Opensearch Log Collector for Docker Containers
 
-Opensearch based container log collector sample with fluentd and fluentbit.
+Opensearch based container log collector sample with fluentbit.
 
 ## Running
 
@@ -9,14 +9,6 @@ Opensearch based container log collector sample with fluentd and fluentbit.
 ```sh
 docker compose up -d
 docker compose logs -f
-```
-
-### Fluentd
-
-`docker-compose.fluentd.yml` includes [*fluentd*](https://www.fluentd.org/) instead of *fluentbit*.
-
-```sh
-docker-compose -f docker-compose.fluentd.yml up -d
 ```
 
 Open in browser http://localhost:8080/vets to produce logs
