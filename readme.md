@@ -17,8 +17,8 @@ Queries
 ```sh
 curl -Ss -XGET "http://localhost:9200/_list/indices"
 
-
-curl -Ss -X GET "localhost:9200/logstash-2024.12.30/_search" -H 'Content-Type: application/json' -d'
+# https://opster.com/guides/elasticsearch/data-architecture/elasticsearch-index-pattern/
+curl -Ss -X GET 'http://localhost:9200/logstash-*/_search' -H 'Content-Type: application/json' -d'
 {
   "size": 1000,
   "query": {
