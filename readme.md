@@ -55,3 +55,7 @@ Get all the objects
 ```sh
 curl -Ss -X GET 'http://localhost:9200/_cat'
 ```
+
+Batching
+https://github.com/fluent/fluent-bit/issues/551#issuecomment-376945772
+
