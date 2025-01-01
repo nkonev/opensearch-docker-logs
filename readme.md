@@ -57,5 +57,6 @@ curl -Ss -X GET 'http://localhost:9200/_cat'
 ```
 
 Batching
-https://github.com/fluent/fluent-bit/issues/551#issuecomment-376945772
+* https://github.com/fluent/fluent-bit/issues/551#issuecomment-376945772
+* https://docs.fluentbit.io/manual/administration/buffering-and-storage
 
