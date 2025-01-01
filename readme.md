@@ -28,12 +28,12 @@ curl -Ss -X GET 'http://localhost:9200/logstash-*/_search' -H 'Content-Type: app
 ' | jq
 ```
 
-Dashboards http://localhost:5601
+Dashboards http://localhost:5601/opensearch
 
 Saved objects https://forum.opensearch.org/t/is-there-a-saved-objects-api-in-opensearch/20625
 
 ```sh
-curl -Ss -X POST "http://localhost:5601/api/saved_objects/_export" -H "osd-xsrf: true" -H "Content-Type: application/json" -d'
+curl -Ss -X POST "http://localhost:5601/opensearch/api/saved_objects/_export" -H "osd-xsrf: true" -H "Content-Type: application/json" -d'
 {
   "type": ["index-pattern", "search", "visualization", "dashboard"]
 }' > saved.ndjson
@@ -41,7 +41,7 @@ curl -Ss -X POST "http://localhost:5601/api/saved_objects/_export" -H "osd-xsrf:
 
 Importing https://github.com/opensearch-project/OpenSearch-Dashboards/issues/1723#issuecomment-1154803199
 ```sh
-curl -X POST "http://localhost:5601/api/saved_objects/_import?overwrite=true" -H "osd-xsrf: true" --form file=@saved.ndjson
+curl -X POST "http://localhost:5601/opensearch/api/saved_objects/_import?overwrite=true" -H "osd-xsrf: true" --form file=@saved.ndjson
 ```
 
 SO - Kibana Search within text for string https://stackoverflow.com/questions/42514737/kibana-search-within-text-for-string

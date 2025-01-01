@@ -35,6 +35,8 @@ services:
       OPENSEARCH_HOSTS: '["http://opensearch:9200"]'
       # https://stackoverflow.com/a/74178195
       DISABLE_SECURITY_DASHBOARDS_PLUGIN: true
+      SERVER_BASEPATH: /opensearch
+      SERVER_REWRITEBASEPATH: true
     restart: unless-stopped
 
   fluentbit:
