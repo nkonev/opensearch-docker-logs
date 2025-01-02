@@ -23,7 +23,12 @@ curl -Ss -X GET 'http://localhost:9200/logstash-*/_search' -H 'Content-Type: app
   "size": 1000,
   "query": {
     "match_all": {}
-  }
+  },
+  "sort" : [
+    { 
+        "@timestamp" : "asc"
+    }
+  ]
 }
 ' | jq
 ```
